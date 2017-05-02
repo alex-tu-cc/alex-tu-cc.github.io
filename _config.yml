@@ -1,17 +1,17 @@
 # Basic
-title: it's life
+title: my journal
 subtitle: no subtitle
-description: 一個自言自語的地方
+description: 野人獻曝
 # 头像里面的标题
 avatarTitle: alextu
 # 头像里面的描述
-avatarDesc: life/sharing
+avatarDesc: tech/sharing
 url: "http://alex-tu-cc.github.io"
 baseurl: ""
 
 # Comment
 comment:
-    # disqus: leopard
+    disqus: alex-tu-cc
     # duoshuo: leopard 
 
 # Social
