@@ -34,7 +34,7 @@ XAUTHORITY=/home/${xuser_display_pairs[$i]}/.Xauthority DISPLAY=${xuser_display_
 * [bash - switch - case](http://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script)
 * zentify
 
-另外如果是要在安裝 package 時跟使用者互動則可以使用 [notification in background]{{ site.baseurl }}{% 2017-05-07-debian-package-debconf %}
+另外如果是要在安裝 package 時跟使用者互動則可以使用 [notification in background]({{ site.baseurl }}{% post_url 2017-05-07-debian-package-debconf %})
 
 Reference:
 * http://users.stat.umn.edu/~geyer/secure.html
