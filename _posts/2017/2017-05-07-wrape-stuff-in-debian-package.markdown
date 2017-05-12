@@ -14,7 +14,7 @@ date: "2017-05-07 22:47"
 
 另外還有一些其他問題:
   * 因為在後面裝如果使者不知道如果他關機了怎麼辨
-    * 對每一個使用者都送訊息, 告知進度([notification in background]{{ site.baseurl }}{% 2016-05-07-notification-in-background })
+    * 對每一個使用者都送訊息, 告知進度([notification in background]{{ site.baseurl }}{% 2016-05-07-notification-in-background %})
      * notify-send, xterm, gnome-terminal
   * 如果使用者不想裝，或至少現在不想裝想晚點再裝怎麼辨
     * install package 時詢問 user: debconf
