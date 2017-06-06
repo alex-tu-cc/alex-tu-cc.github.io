@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "different-of-ubuntu-preload-laptop"
+title: "preload Ubuntu 的筆電有什麼不同?"
 date: "2017-06-06 18:13"
 ---
 
@@ -30,16 +30,16 @@ date: "2017-06-06 18:13"
 
 ## oem-priority
 launchpad 上面有一個 oem-priority project, 用來收集 preloaded Ubuntu 機種上面使用者報出的問題，並依優先權處理，最後的 solution 也會依其是不是特定機種相關放到 stock Ubuntu 或是各個機種的 PPA.
- * https://bugs.launchpad.net/oem-priority
+ * [https://bugs.launchpad.net/oem-priority](https://bugs.launchpad.net/oem-priority)
 
 ## 怎麼找 Ubuntu preloaded laptop?
 以 Dell 為例，它將 preloaded Ubuntu 的機種放在"developer"類別:
- * http://www.dell.com/learn/us/en/555/campaigns/xps-linux-laptop?c=us&l=en&s=biz
+ * [http://www.dell.com/learn/us/en/555/campaigns/xps-linux-laptop?c=us&l=en&s=biz](http://www.dell.com/learn/us/en/555/campaigns/xps-linux-laptop?c=us&l=en&s=biz)
 
 點 "shop now" 後，可以修改 "Refine your search:" 去找想要的配備，上面的 XPS13 也是這樣找出來的。
 
 或是直接上 Ubuntu certification 網頁找，但是它的排序是用字母好像沒什麼參考性，畢竟大家想換電腦應該都是看其硬體效能如何。
- * https://certification.ubuntu.com/desktop/models/?category=Laptop&vendors=Dell&page=9
+ * [https://certification.ubuntu.com/desktop/models/?category=Laptop&vendors=Dell&page=9](https://certification.ubuntu.com/desktop/models/?category=Laptop&vendors=Dell&page=9)
 
 ## 結論
 直接購買 preloaded Ubuntu 的確是比較省時，省力，又有後續的維護。就算有問題，因為同機型的使用者多也容易找到解法或是 oem-priority 會放在較高的優先權。
