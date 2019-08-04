@@ -51,7 +51,7 @@ BTW,  as arecord, my BIOS is 1.3.2, in case BIOS OTA break stability later. I ke
 
 If there’s still issue on this environment, then it’s likely an OTA retression and already be reported on launchpad[4].
 
-BTW, someone shared the OEM image on forum, it could also be a reference to understand what be installed in Ubuntu edition machine. But it should just similar to what we manually built.
+BTW, someone shared the OEM image on [forum][1], it could also be a reference to understand what be installed in Ubuntu edition machine. But it should just similar to what we manually built.
 
 [18.04]:https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes?_ga=2.119646856.1425105764.1563813986-519412228.1563630648
 [oem kernel]:https://launchpad.net/ubuntu/+source/linux-oem
@@ -59,6 +59,6 @@ BTW, someone shared the OEM image on forum, it could also be a reference to unde
 [dpkg-l]:http://paste.ubuntu.com/p/TXFgTZMNnk/
 [201810-26512]:https://certification.ubuntu.com/hardware/201810-26512/
 [manifest of 18.04.2]:http://releases.ubuntu.com/18.04/ubuntu-18.04.2-desktop-amd64.manifest
-
+[1]:https://askubuntu.com/questions/1136409/new-xps-13-9380-with-ubuntu-18-04-flicker-problems/1149630#1149630
 # Reference
 - https://ubuntu.com/about/release-cycle
