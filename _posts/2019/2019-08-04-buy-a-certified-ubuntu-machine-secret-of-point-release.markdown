@@ -22,9 +22,9 @@ Following another post [buy a certified Ubuntu machine][], there's a forum post 
 # Let's start it
 ## mockup vs. OEM image
  - [dpkg -l of mockup][]
- - [packages on machine installed oem image then do system update]
- - difference:
- - hwe graphic
+ - [packages on machine installed oem image then do system update](http://paste.ubuntu.com/p/G67nDckDtg/)
+ - diff oem image and mockup: [diff-oem-mockup][]
+    - obviousely the main change which could impact functionality is hwe graphic`
 
 ## OEM image vs. Stock
  - compare to 18.04.2
@@ -44,7 +44,7 @@ Your 18.04.2 is not 18.04.2
 # Wrap it up
  - what's the most stable environment.
 
-
+[diff-oem-mockup]:http://paste.ubuntu.com/p/CcRjRt8RSv/
 [manifest of 18.04]:http://old-releases.ubuntu.com/releases/18.04.1/ubuntu-18.04-desktop-amd64.manifest
 [iso of older 18.04]:http://old-releases.ubuntu.com/releases/18.04.1/  
 [dpkg -l of mockup]:http://paste.ubuntu.com/p/TXFgTZMNnk/
