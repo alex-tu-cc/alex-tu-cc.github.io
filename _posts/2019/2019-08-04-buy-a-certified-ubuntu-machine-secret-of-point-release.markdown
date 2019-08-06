@@ -24,9 +24,8 @@ Following another post "[buy a certified Ubuntu machine][]", there's a forum pos
 # Let's start it
 ## mockup vs. OEM image
 
-```
-  The significant difference is HWE graphic
-```
+>  The significant difference is HWE graphic
+
 - [dpkg -l of mockup][]
 - [packages on machine installed OEM image then do system update](http://paste.ubuntu.com/p/G67nDckDtg/)
 - diff OEM image and mockup: [diff-oem-mockup][]
@@ -35,9 +34,8 @@ Following another post "[buy a certified Ubuntu machine][]", there's a forum pos
 Because the mockup environment is built from stock Ubuntu, so the easier way is to find out what are the difference between stock and OEM image.
 
 ## OEM image vs. Stock
-```
-  OEM image came from 1st version of 18.04
-```
+
+>  OEM image came from 1st version of 18.04
 
 - [dpkg -l of 18.04.2 after system upgraded by UI](http://paste.ubuntu.com/p/ZbfNWZS7Dy)
 - [packages on machine installed OEM image then do system update](http://paste.ubuntu.com/p/G67nDckDtg/)
@@ -56,9 +54,9 @@ The easiest way to diff them is by their manifest.
   - the significant difference is hwe kernel and HWE graphic
 
 ## Upgrade 18.04 to 18.04.2
-```
-  Your 18.04.2 is not 18.04.2
-```
+
+>  Your 18.04.2 is not 18.04.2
+
 Some user might expect the system upgrading by UI can bring your system up to latest point release. But the fact is a bit different.
 - 18.04 after upgrading by UI
   - [lsb_release -a](http://paste.ubuntu.com/p/xvR3Mwv4RK)
