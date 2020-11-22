@@ -1,0 +1,37 @@
+---
+layout: "post"
+title: "FingerPrint supporting : goodix"
+date: "2020-11-22 13:00"
+---
+
+# Background
+
+To support fingerprint on Ubuntu, the function is supported by [libfprint][].  
+As usual, not every device vendor supports Linux for their device.  
+The ways supporting a FP device on libfprint are:
+ 1. Device vendor contribute their code to [libfprint][].
+ 2. Community contribute to libfprint by reverse engineering.
+ 3. Device vendor provide a proprietary  binary based on the [libfprint-tod][] framework.
+
+## FP devices supported by opensource
+
+The devices supported by way 1. and 2. could be found on the [supported device list of libfprint](https://fprint.freedesktop.org/supported-devices.html).  
+e.g. [Goodix is contributing to libfprint](https://gitlab.freedesktop.org/libfprint/libfprint/-/blob/master/libfprint/drivers/goodixmoc/goodix.c) by way 1 on part of their devices.
+
+## FP devices supported by proprietary library
+
+The 3rd way [libfprint-tod][] was built from Ubuntu 20.04 by Marco Trevisan.
+It is a way for those Device vendors to contribute their dirver to Linux. Some vendors indeed have concern on protecting their algorithm for security or business.
+sofar, only [Goodix][] is supporting [part of their FP devices][goodix tod devices] by 3 which will installed automatically on XPS 9300 ,XPS 9310 by [oem_meta][] and hopfully for all Ubuntu certified machine have [the supported goodix FP devices][goodix tod devices].
+
+AFAIK, fingerprint vendors have limited resource supporting Linux, so the supporting might based on OEM request.
+
+[oem_meta]: https://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-20.04-Certified-OEM-Exp
+[libfprint]: https://fprint.freedesktop.org/
+[libfprint-tod]: https://gitlab.freedesktop.org/3v1n0/libfprint/-/tree/tod
+[Goodix]: https://www.goodix.com/en/product/category/Fingerprint_Sensors
+[goodix tod devices]: https://git.launchpad.net/~oem-solutions-engineers/libfprint-2-tod1-goodix/+git/libfprint-2-tod1-goodix/tree/debian/modaliases
+
+# Reference:
+ - [libfprint project][libfprint]
+ - [libfprint-tod][]
