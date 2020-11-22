@@ -99,5 +99,4 @@ After 20.04, the [OEM experience][oem_meta] has been adopted to stock Ubuntu, so
 [DKMS_SecureBootOn1804]: https://wiki.canonical.com/IvanHu/DKMS_SecureBootOn1804
 [moke_enroll_stock_ubuntu]: https://wiki.ubuntu.com/Dell?action=AttachFile&do=view&target=mok_enroll_stock_ubuntu_2.pdf
 [oem_meta]: https://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-20.04-Certified-OEM-Exp
-[dell-recovery]: https://github.com/dell/dell-recovery
-
+[dell-recovery]: https://github.com/dell/dell-recove
