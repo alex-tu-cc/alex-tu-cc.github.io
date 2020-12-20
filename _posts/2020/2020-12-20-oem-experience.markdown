@@ -1,12 +1,12 @@
-#---
-#title: oem-experience
-#subtitle:
-#layout: post
-#date: 2020-12-20
-#categories: [_posts]
-#tags:
-#  - oem 
-#---
+---
+title: oem-experience
+subtitle:
+layout: post
+date: 2020-12-20
+categories: [_posts]
+tags:
+  - oem 
+---
 
 # Background
 Even it's already very easy to run Ubuntu on any X86 machine, it sometimes still struggling when some device (e.g. wifi, bt ..etc.) failed to work.
