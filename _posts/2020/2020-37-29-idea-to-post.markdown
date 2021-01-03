@@ -12,5 +12,5 @@ This post is used to collect topics I would like to share but not yet have time 
 
  - How to find a machine that Linux supported well?
  - Do you know your machine consume less power than a light bulb?
- - What's the OEM experience.
+ - How to auto verify basic functions by checkbox?(by https://github.com/alex-tu-cc/prepare-checkbox-sanity)
  - ... etc
