@@ -1,15 +1,14 @@
-#---
-#Title: 2021-01-09-prepare-checkbox-sanity
-#Subtitle: a wrapper to using checkbox testing.
-#Layout: post
-#Date: 2021-01-09
-#Categories: [_posts]
-#Tags:
-#  - checkbox
-#  - ubuntu
-#  - testing
-#  - certification
-#---
+---
+Title: Nvidia runtime pm (RTD3) in ubuntu
+Layout: post
+Date: 2021-05-30
+Categories: [_posts]
+Tags:
+  - ubuntu
+  - Nvidia
+  - runtimepm
+  - RTD3
+---
 
 # Background
 
