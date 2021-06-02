@@ -44,7 +44,7 @@ Ubuntu 提供的 prime-select command 是用來切換要用 Intel rendering 還�
 
 ![nvidia-prime-select-ui]({{ site.baseurl }}/images/2021/nvidia-prime-select-ui.png)
 
-在 Nvidia support runtimepm 之前當 prime-select Nvidia後，dGPU 會一直醒著，所有的 rendering 都從 dGPU 出來（ 可以從 glxinfo 看出）。
+在 Nvidia support runtimepm 之前當 prime-select Nvidia後，dGPU 會一直醒著。
 換言之，prime-select intel 就是用 Intel rendering , 那 dGPU 沒事就可以去睡，以達到省電的目地。但 Nvidia 還不支持 runtime pm ，dGPU 怎麼睡? 它是在 prime-select intel 的下次動開機，直接強迫 Nvidia dGPU 不load 任何 driver，而一個 PCI device 沒用 driver 在使用它，自動就會去睡了。
 
 prime-select 之前只有 nvidia 跟 intel 兩個選項。
@@ -90,7 +90,7 @@ Usage     Device name
 
 如前述，prime-select on-demand 是你叫它用 Nvidia rendering 它才會用 Nvidia，不然的話就是用 iGPU 畫，跟睡不睡無關。在 Nvidia r450 之後如果 dGPU 有支持 runtimepm ，感覺 dGPU 沒在畫的時後就去睡覺很合理對嗎?但 Nvidia 沒打算讓 runtime pm default enabled，所以你想讓它沒畫的時後去睡，就必需要問 Nvidia driver 有沒有支持 runtime pm（by supported-gpus.json) 再跟 Nvidia Driver 說它可以跑 runtime pm 。
 
-因為 大部份的 OEM 都需要過 e-star，而且沒用的時後可以睡就去睡也滿合常理，所以目前 Ubuntu 的設計是在 on-demand 下，能睡就叫 dGPU 去睡。
+因為 大部份的 OEM 都需要過 e-star，而且沒用的時後可以睡就去睡也滿合常理，所以目前 Ubuntu 的設計是在選了 on-demand 情況下，能睡就叫 dGPU 去睡。
 
 所以這裡再強調一遍
 ```
