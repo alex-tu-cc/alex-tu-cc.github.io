@@ -13,7 +13,7 @@ Tags:
 # Background
 
 從上一篇 [Nvidia runtime PM](http://alex-tu-cc.github.io/2020/11/Nvidia-runtimepm/). Nvidia 從 r450開始對某些卡支持 runtime PM.
-那某些是那些? 可以在 Nvidia 官方driver 自帶的 supported-gpus.json 看到。
+那某些是那些? 可以在 Nvidia 官方driver 自帶的 [supported-gpus.json](https://alex-tu-cc.github.io/get-nvidia-supported-gpus-json/) 看到。
 例如裡面指出 DID 0x1E04，有支持 runtimepm:
 
 ```
@@ -88,7 +88,7 @@ Usage     Device name
 
 # What’s the relationship between on-demand mode and runtime pm?
 
-如前述，prime-select on-demand 是你叫它用 Nvidia rendering 它才會用 Nvidia，不然的話就是用 iGPU 畫，跟睡不睡無關。在 Nvidia r450 之後如果 dGPU 有支持 runtimepm ，感覺 dGPU 沒在畫的時後就去睡覺很合理對嗎?但 Nvidia 沒打算讓 runtime pm default enabled，所以你想讓它沒畫的時後去睡，就必需要問 Nvidia driver 有沒有支持 runtime pm（by supported-gpus.json) 再跟 Nvidia Driver 說它可以跑 runtime pm 。
+如前述，prime-select on-demand 是你叫它用 Nvidia rendering 它才會用 Nvidia，不然的話就是用 iGPU 畫，跟睡不睡無關。在 Nvidia r450 之後如果 dGPU 有支持 runtimepm ，感覺 dGPU 沒在畫的時後就去睡覺很合理對嗎?但 Nvidia 沒打算讓 runtime pm default enabled，所以你想讓它沒畫的時後去睡，就必需要問 Nvidia driver 有沒有支持 runtime pm（by [supported-gpus.json](https://alex-tu-cc.github.io/get-nvidia-supported-gpus-json/)) 再跟 Nvidia Driver 說它可以跑 runtime pm 。
 
 因為 大部份的 OEM 都需要過 e-star，而且沒用的時後可以睡就去睡也滿合常理，所以目前 Ubuntu 的設計是在選了 on-demand 情況下，能睡就叫 dGPU 去睡。
 
@@ -103,7 +103,7 @@ on-demand 不等於 runtime pm, 有支持 runtime pm 的 Nvida dGPU 在 Ubuntu �
 
 # What did Ubuntu do to adopt Nvidia runtime pm?
 
-gpu manager 在每次開機的時後會去看一下 supported-gpus.json 裡面目前使用的 dGPU 有沒有支持 runtime pm，有的話會生成 /run/nvidia_runtimepm_supported, 詳細的 log 可以在 /var/log/gpu-manager.log 中找到。
+gpu manager 在每次開機的時後會去看一下 [supported-gpus.json](https://alex-tu-cc.github.io/get-nvidia-supported-gpus-json/) 裡面目前使用的 dGPU 有沒有支持 runtime pm，有的話會生成 /run/nvidia_runtimepm_supported, 詳細的 log 可以在 /var/log/gpu-manager.log 中找到。
 然後 prime-select on-demand 的時後會把`NVreg_DynamicPowerManagement=0x02`這個 module parameter 放到 /lib/modprobe.d/nvidia-runtimepm.conf, 然後再重新生成 initrd ，如此就可以達成下次開機load nvidia driver 的時後，enable runtime pm。再加上 on-demand mode 平常是 default iGPU rendering, 所以在這樣的情況下 dGPU 沒在用就可以自已去睡覺。
 
 ```
@@ -137,7 +137,7 @@ DynamicPowerManagement: 2
 最近有很多筆電自帶的 HDMI/DP port 在硬體設計上，直接接到 dGPU 上面，換言之，常 dGPU 睡覺的時後，HDMI/DP port 就失去作用，也就是說 prime-select intel 之後(如前述，沒有任何driver 使用dGPU)，你的 HDMI/DP port 當然就不能用了。
 在 Nvidia runtime pm 之後，如果你的 Nvidia dGPU 有支持 runtime pm，你用 prime-select on-demand 後，因為 enable runtime pm 的 Nvidia driver 還在，所以當有人插入 HDMI/DP 的時後，driver 收到 interrupt 會自動醒來，這樣 HDMI/DP 就能正常使用。
 
-所以，如果你的筆電是這種 hardware 設計的，剛好 Nvidia 有把你的 dGPU 放到 supported-gpus.json, 那你裝最新的 nvidia driver (> r450)，就可以同時享有沒插 HDMI/DP 的時後省電，插上就又馬上可以使用。
+所以，如果你的筆電是這種 hardware 設計的，剛好 Nvidia 有把你的 dGPU 放到 [supported-gpus.json](https://alex-tu-cc.github.io/get-nvidia-supported-gpus-json/), 那你裝最新的 nvidia driver (> r450)，就可以同時享有沒插 HDMI/DP 的時後省電，插上就又馬上可以使用。
 
 最後，如果 Nvidia 最後跟 AMD 一樣都 default enable runtim pm for all dGPU，那就不用那麼多 workaround 去 prime-select 了。
 
