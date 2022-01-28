@@ -12,6 +12,7 @@ date: "2020-11-23 02:00"
  - Nvidia driver starts to support runtime PM on part of graphic cards.
     - The supported graphic product ids are collected in supported-gpus.json which released from the driver(.run binary) released by Nvidia).
     - For example, the [supported-gpus.json](https://paste.ubuntu.com/p/mdrg2jYKkt/) from Nvidia-driver-450
+        - The latest supported-gpus.json : https://alex-tu-cc.github.io/get-nvidia-supported-gpus-json/
 
 # The automatical Nvidia runtime PM in on-demand mode.
 With [nvidia-prime][], [gpu manager][] and Nvidia drivers, Ubuntu able to detect if runtime PM is supported on your graphic card then operates properly.   
