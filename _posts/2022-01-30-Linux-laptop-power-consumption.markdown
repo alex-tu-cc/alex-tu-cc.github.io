@@ -37,7 +37,7 @@ It’s a trade-off that some OS does not aggressively improve power consumption 
 
 It’s also a challenge to keep the power consumption experience after shipping when hardware vendors do not cover enough Linux verification for each firmware update. I can just share a bit overview of this topic in this short post. Welcome to leave your message if you would like to know more about the detail.
 
-BTW, Canonical(Ubuntu) is hiring (https://grnh.se/caf5ff9a1). Join us if you would like to make Linux better!
+BTW, Canonical(Ubuntu) is hiring ({{ site.baseurl }}/2022/02/ubuntu-is-hiring/). Join us if you would like to make Linux better!
 
 [1] https://www.energystar.gov/  
 [2] https://en.wikipedia.org/wiki/Energy-related_products  
