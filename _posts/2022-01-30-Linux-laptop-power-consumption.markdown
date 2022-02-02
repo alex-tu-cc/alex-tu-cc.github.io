@@ -10,6 +10,10 @@ Tags:
   - power__consumption
 ---
 
+![polar bear]({{ site.baseurl }}/images/polar_bear_hi_640X426.jpg)
+
+## Do you know the power consumption of your Linux laptop is less than a bulb?
+
 Do you know the power consumption of your Linux laptop is less than a bulb? Let’s talk a bit about it.
 
 The compliances related to power consumption we encountered during Linux enablement are mostly been energy star(e-sta)[1] and ErP[2] (BTW, a machine that passed e-star usually also passed ErP).
@@ -18,9 +22,13 @@ Because e-star compliance is to check the value translated from a formula with t
 
 Now, it can be even easier to check the Intel CPU power state for each power scenario because a machine that can get PC10 used to pass e-star. So, a quick way is to check if the system can successfully get PC10 and s0ix during long idle or suspend to idle. (Also refer to power-management/cpu-low-power-idle and power-management/system-low-power-idle in checkbox [4] for the test scripts committed by my team)
 
-It sounds so good, then why don’t we just make it on every machine? It counts on each hardware and software component vendor to make the device get into sleep during idle so that the CPU can get PC10 state. Most of the time, IHV tends to disable the runtime suspend[5][6] related features by default to work around issues introduced by the immature driver or device firmware. That’s also part of our major work to deal with during enablement for the e-star requirement. One target is to enable the runtime suspend feature by default on those verified devices. ([The Nvidia RTD3 feature that I introduced in another post is one of the cases]({{ site.baseurl }}/2021/05/nvidia-rtd3-in-ubuntu/))
+## It sounds so good, then why don’t we just apply it to every machine?
+
+It sounds so good, then why don’t we just apply it to every machine? It counts on each hardware and software component vendor to make the device get into sleep during idle so that the CPU can get PC10 state. Most of the time, IHV tends to disable the runtime suspend[5][6] related features by default to work around issues introduced by the immature driver or device firmware. That’s also part of our major work to deal with during enablement for the e-star requirement. One target is to enable the runtime suspend feature by default on those verified devices. ([The Nvidia RTD3 feature that I introduced in another post is one of the cases]({{ site.baseurl }}/2021/05/nvidia-rtd3-in-ubuntu/))
 
 If someone would like to improve the power consumption of their laptop. A quick way is to try the powertop command to find out and enable the runtime suspend feature for each device. If you are lucky that no function be impacted, then the easiest way is to install TLP[7] so that TLP daemon can help to enable the runtime suspend for each device for each boot.
+
+## Power consumption is a complicated topic
 
 Power consumption is a complicated topic that involved multiple parts:
 - Hardware:  
@@ -37,7 +45,9 @@ It’s a trade-off that some OS does not aggressively improve power consumption 
 
 It’s also a challenge to keep the power consumption experience after shipping when hardware vendors do not cover enough Linux verification for each firmware update. I can just share a bit overview of this topic in this short post. Welcome to leave your message if you would like to know more about the detail.
 
-BTW, Canonical(Ubuntu) is hiring ({{ site.baseurl }}/2022/02/ubuntu-is-hiring/). Join us if you would like to make Linux better!
+## Let's make Linux better
+
+BTW, [Canonical(Ubuntu) is hiring]({{ site.baseurl }}/2022/02/ubuntu-is-hiring/). Join us if you would like to make Linux better!
 
 [1] https://www.energystar.gov/  
 [2] https://en.wikipedia.org/wiki/Energy-related_products  
@@ -47,7 +57,8 @@ BTW, Canonical(Ubuntu) is hiring ({{ site.baseurl }}/2022/02/ubuntu-is-hiring/).
 [6] https://www.kernel.org/doc/html/latest/power/pci.html  
 [7] https://github.com/linrunner/TLP  
 
-Reference:
+## Other Reference:
+
 - [Using L1 Sub-States to Reduce Power Consumption in PCI Express-Based Devices](https://www.synopsys.com/designware-ip/technical-bulletin/reduce-power-consumption.html)
 - [PCIe ASPM(ACTIVE-STATE POWER MANAGEMENT)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/power_management_guide/aspm)
 - [Debugging hibernation and suspend](https://www.kernel.org/doc/html/latest/power/basic-pm-debugging.html)
